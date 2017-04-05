@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ApiUnitTests.iml" filepath="$PROJECT_DIR$/ApiUnitTests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/maven-compiler-plugin.iml" filepath="$PROJECT_DIR$/maven-compiler-plugin.iml" />
     </modules>
   </component>
 </project>

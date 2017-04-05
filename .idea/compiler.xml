@@ -22,11 +22,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="ApiUnitTests" />
+        <module name="maven-compiler-plugin" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="ApiUnitTests" target="1.8" />
+      <module name="maven-compiler-plugin" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
