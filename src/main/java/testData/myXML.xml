@@ -1,0 +1,10 @@
+<SomeRootElement>
+    <CD id="1">
+        <TITLE>Rhapsody of fire</TITLE>
+        <ARTIST>Luca Turilli</ARTIST>
+        <COUNTRY>Italy</COUNTRY>
+        <COMPANY>Producer Valentin(c)</COMPANY>
+        <PRICE>19.99$</PRICE>
+        <YEAR>2002</YEAR>
+    </CD>
+</SomeRootElement>
