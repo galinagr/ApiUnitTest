@@ -19,7 +19,7 @@ public class HttpMethods {
 
         HttpClient httpClient = new DefaultHttpClient();
         try {
-            HttpGet httpGetRequest = new HttpGet("http://de.dice.com/?Mode=AdvertView&AdvertId=9688691&utm_source=Feed&utm_medium=ReTargeting&utm_campaign=CRITEO");
+            HttpGet httpGetRequest = new HttpGet("https://any-api.com/trello_com/trello_com/docs/API_Description");
             HttpResponse httpResponse = httpClient.execute(httpGetRequest);
 
             System.out.println("----------------------------------------");
@@ -57,5 +57,20 @@ public class HttpMethods {
             httpClient.getConnectionManager().shutdown();
         }
     }
+//    InputStream is = response.getEntity().getContent();
+//    Create a FileOutputStream
+//
+//    FileOutputStream fos = new FileOutputStream(new File(Environment.getExternalStorageDirectory(), "test.epub"));
+//
+//    and read from is and write with fos
+//
+//    int read = 0;
+//    byte[] buffer = new byte[32768];
+//while( (read = is.read(buffer)) > 0) {
+//        fos.write(buffer, 0, read);
+//    }
+//
+//fos.close();
+//is.close();
 }
 
