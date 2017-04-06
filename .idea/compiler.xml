@@ -26,7 +26,6 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="ApiUnitTests" target="1.8" />
       <module name="maven-compiler-plugin" target="1.8" />
     </bytecodeTargetLevel>
   </component>

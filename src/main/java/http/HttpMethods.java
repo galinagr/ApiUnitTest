@@ -1,36 +1,46 @@
 package http;
 
-
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.*;
 
+import static testData.Constants.FILE_PLACE_NEW_XML;
+import static testData.Constants.URL;
+
 public class HttpMethods {
 
-    public final static void main(String[] args) throws IOException {
+    private static String statusCode;
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(HttpMethods.class);
+
+    public static String getStatusCode() {
+        return statusCode;
+    }
+
+    public static void sendGet () throws IOException, FileNotFoundException {
 
         HttpClient httpClient = new DefaultHttpClient();
-        HttpGet httpGetRequest = new HttpGet("http://apidev.accuweather.com/developers/best-practices");
+        HttpGet httpGetRequest = new HttpGet(URL);
         HttpResponse httpResponse = httpClient.execute(httpGetRequest);
-
-        System.out.println("----------------------------------------");
-        System.out.println(httpResponse.getStatusLine());
-        System.out.println("----------------------------------------");
+        statusCode = String.valueOf(httpResponse.getStatusLine());
+        LOGGER.info("----------------------------------------");
+        LOGGER.info("INFO" + statusCode);
+        LOGGER.info("----------------------------------------");
 
         HttpEntity entity = httpResponse.getEntity();
 
-        byte[] buffer = new byte[1024];
         if (entity != null) {
             InputStream inputStream = entity.getContent();
-            File targetFile = new File("C:\\Workspace\\ApiUnitTest\\src\\main\\java\\testData\\xmlResult.xml");
+            File targetFile = new File(FILE_PLACE_NEW_XML);
             try {
                 copyInputStreamToFile(inputStream, targetFile);
-            } catch (Exception e) {
-                e.printStackTrace();
+                Separation.separation();
             } finally {
                 httpClient.getConnectionManager().shutdown();
             }
@@ -49,7 +59,7 @@ public class HttpMethods {
             outputStream.close();
             inputStream.close();
         } catch (Exception e) {
-            e.printStackTrace();
+           LOGGER.debug("Exception is " + e);
         }
     }
 }

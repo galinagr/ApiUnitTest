@@ -7,6 +7,8 @@ import org.w3c.dom.NodeList;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
+import static testData.Constants.TAG_NAME;
+
 //http://khpi-iip.mipk.kharkiv.edu/library/extent/prog/iipXML/examp/3/SaxToDom.html
 //back to DOM
 
@@ -21,7 +23,7 @@ public class CustomDomParser {
         //change this piece of code to a loop in case you need to iterate over
         //multiple songs, int this case your should return array or list or set instead
         //of Song bean
-        Node cd = doc.getElementsByTagName("CD").item(0);
+        Node cd = doc.getElementsByTagName(TAG_NAME).item(0);
         NodeList cdAttributes = cd.getChildNodes();
         Song parsedSong = new Song();
 

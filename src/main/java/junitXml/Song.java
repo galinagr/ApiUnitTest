@@ -10,10 +10,19 @@ public class Song {
     private String price;
     private String year;
 
+    public Song(String title, String artist, String country, String company, String price, String year) {
+        this.title = title;
+        this.artist = artist;
+        this.country = country;
+        this.company = company;
+        this.price = price;
+        this.year = year;
+    }
+
     public Song() {
     }
 
-    public Song(String title, String artist, String country, String company, String price, String year) {
+    public Song(String title) {
         this.title = title;
         this.artist = artist;
         this.country = country;
