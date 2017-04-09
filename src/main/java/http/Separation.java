@@ -18,7 +18,7 @@ import static testData.Constants.FILE_PLACE_NEW_XML;
 
 class Separation {
 
-    public static void separation () throws IOException {
+    static void separation() throws IOException {
         Logger LOGGER = LoggerFactory.getLogger(Separation.class);
         URL obj = new URL(Constants.URL);
         URLConnection conn = obj.openConnection();

@@ -40,7 +40,6 @@ public class CustomDomParserNewXml {
             }
             if (SUBRESOURCE_URIS.equals(node.getNodeName())) {
                 parsedSongNew.setSubresourceUris(node.getTextContent());
-                continue;
             }
         }
         return parsedSongNew;

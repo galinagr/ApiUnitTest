@@ -3,7 +3,10 @@ package junitXmlTest;
 import http.HttpMethods;
 import junitXml.CustomDomParserNewXml;
 import junitXml.SongNew;
-import org.junit.*;
+import org.junit.AfterClass;
+import org.junit.Assert;
+import org.junit.BeforeClass;
+import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -56,6 +59,7 @@ public class CustomDomParserNewXmlTest {
 
         //then
         assertNotNull(parsedSong);
+        assertEquals(expectedSong.toString().length(),parsedSong.toString().length());
         assertEquals(expectedSong, parsedSong);
         assertEquals(expectedSong.getName(), parsedSong.getName());
         assertEquals(expectedSong.getSubresourceUris(), parsedSong.getSubresourceUris());
@@ -73,4 +77,5 @@ public class CustomDomParserNewXmlTest {
     private SongNew constructExpectedSongXML() {
         return new SongNew(NODES_DATA_NEW[0],NODES_DATA_NEW[1],NODES_DATA_NEW[2]);
     }
+
 }
