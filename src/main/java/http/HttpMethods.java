@@ -23,7 +23,7 @@ public class HttpMethods {
         return statusCode;
     }
 
-    public static void sendGet () throws IOException, FileNotFoundException {
+    public static void sendGet () throws IOException {
 
         HttpClient httpClient = new DefaultHttpClient();
         HttpGet httpGetRequest = new HttpGet(URL);
